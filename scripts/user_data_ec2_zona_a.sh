@@ -20,7 +20,7 @@ sudo systemctl start docker.service
 
 #Instalando pip e eb
 sudo yum install python3-pip -y
-sudo pip3 install awsebcli --upgrade --user
+pip3 install awsebcli --upgrade --user
 
 
 #Adicionar swap
