@@ -18,17 +18,9 @@ sudo chmod -v +x /usr/local/bin/docker-compose
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
 
-#Instalando python, pip e eb
-sudo yum update -y
-sudo yum groupinstall "Development Tools" -y
-sudo yum install openssl-devel libffi-devel bzip2-devel wget -y
-sudo wget https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tgz
-sudo tar xzf Python-3.10.2.tgz && cd Python-3.10.2
-sudo ./configure --enable-optimizations
-nproc && make -j $(nproc)
-sudo make altinstall
+#Instalando pip e eb
 sudo yum install python3-pip -y
-sudo pip3 install awsebcli --upgrade --user -y
+sudo pip3 install awsebcli --upgrade --user
 
 
 #Adicionar swap
