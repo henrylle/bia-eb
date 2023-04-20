@@ -1,0 +1,11 @@
+version: "3"
+services:
+  bia:
+    image: bia:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BIA_API_URL: ${BIA_API_URL}
+    ports:
+      - 80:8080

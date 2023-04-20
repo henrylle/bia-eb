@@ -1,5 +1,8 @@
 FROM node:18-slim
 
+ARG BIA_API_URL
+RUN echo "Api da BIA: $BIA_API_URL"
+
 RUN npm install -g npm@latest --loglevel=error
 WORKDIR /usr/src/app
 
@@ -9,7 +12,7 @@ RUN npm install --loglevel=error
 
 COPY . .
 
-RUN REACT_APP_API_URL=http://bia-dev.us-east-1.elasticbeanstalk.com SKIP_PREFLIGHT_CHECK=true npm run build --prefix client
+RUN REACT_APP_API_URL=$BIA_API_URL SKIP_PREFLIGHT_CHECK=true npm run build --prefix client
 
 RUN mv client/build build
 
