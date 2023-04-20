@@ -1,0 +1,23 @@
+deploy:
+  artifact: bia-versao.zip
+branch-defaults:
+  main:
+    environment: bia-dev
+  dev:
+    environment: bia-dev
+environment-defaults:
+  bia-dev:
+    branch: null
+    repository: null
+global:
+  application_name: bia-app
+  default_ec2_keyname: null
+  default_platform: Docker running on 64bit Amazon Linux 2
+  default_region: us-east-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: bia
+  sc: git
+  workspace_type: Application
